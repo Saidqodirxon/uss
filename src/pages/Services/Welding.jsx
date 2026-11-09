@@ -15,13 +15,13 @@ export default function Welding() {
   return (
     <>
       {/* HERO */}
-      <section className="py-20 md:py-28 relative overflow-hidden">
+      <section className="pt-28 md:pt-36 pb-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-black -z-10" />
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1 
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="text-5xl md:textxt-7xl font-black text-white mb-8"
+            className="text-5xl md:text-7xl font-black text-white mb-8"
           >
             {t("welding.title")}
           </motion.h1>
@@ -56,9 +56,9 @@ export default function Welding() {
             { icon: <Sparkles className="w-10 h-10 text-blue-400" />, v: "50 mm", m: t("welding.thickness.aluminum") },
             { icon: <Zap className="w-10 h-10 text-yellow-400" />, v: "TIG/MIG/argon", m: t("welding.thickness.methods") },
           ].map((item, i) => (
-            <div key={i} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center">
+            <div key={i} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center flex flex-col items-center">
               {item.icon}
-              <div className="text-3xl font-bold text-white mt-3">{item.v}</div>
+              <div className="text-2xl font-bold text-white mt-3 leading-tight break-words">{item.v}</div>
               <div className="text-white/60 text-sm mt-1">{item.m}</div>
             </div>
           ))}

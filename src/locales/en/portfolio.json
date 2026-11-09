@@ -5,25 +5,80 @@
     "details": "Details",
     "order": "Order Now",
     "projects": [
-      { "id": 1, "title": "Shopping Mall", "desc": "Tashkent, 1200 m²" },
-      { "id": 2, "title": "Factory Hangars", "desc": "Fergana, 3500 m²" },
-      { "id": 3, "title": "Laser Cut Parts", "desc": "For Artel, 5000+ pcs" },
+      {
+        "id": 1,
+        "title": "Shopping Mall",
+        "desc": "Tashkent, 1200 m²"
+      },
+      {
+        "id": 2,
+        "title": "Factory Hangars",
+        "desc": "Fergana, 3500 m²"
+      },
+      {
+        "id": 3,
+        "title": "Laser Cut Parts",
+        "desc": "For Artel, 5000+ pcs"
+      },
       {
         "id": 4,
         "title": "Office Furniture",
         "desc": "Metal + Glass Combination"
       },
-      { "id": 5, "title": "Welding Project", "desc": "IMZO, 40 tons" },
+      {
+        "id": 5,
+        "title": "Welding Project",
+        "desc": "IMZO, 40 tons"
+      },
       {
         "id": 6,
         "title": "Decorative Panels",
         "desc": "Restaurant & Cafe Design"
       },
-      { "id": 7, "title": "Industrial Gates", "desc": "Automatic System" },
+      {
+        "id": 7,
+        "title": "Industrial Gates",
+        "desc": "Automatic System"
+      },
       {
         "id": 8,
         "title": "Advertising Structure",
         "desc": "Tashkent City, 18m height"
+      },
+      {
+        "id": 9,
+        "title": "Logistics Center Warehouse",
+        "desc": "Tashkent Region, 2800 m²"
+      },
+      {
+        "id": 10,
+        "title": "Laser-Patterned Metal Gates",
+        "desc": "Premium Private Villa Project"
+      },
+      {
+        "id": 11,
+        "title": "Industrial Ventilation Ducts",
+        "desc": "Factory Complex, 1500 m"
+      },
+      {
+        "id": 12,
+        "title": "Metal Stairs and Railings",
+        "desc": "Modern Business Center Design"
+      },
+      {
+        "id": 13,
+        "title": "Agricultural Machinery Hangar",
+        "desc": "Samarkand, 2000 m²"
+      },
+      {
+        "id": 14,
+        "title": "Car Dealership Facade Structure",
+        "desc": "Tashkent, 900 m²"
+      },
+      {
+        "id": 15,
+        "title": "Pipe and Profile Bending Project",
+        "desc": "Industrial Equipment Parts"
       }
     ]
   }

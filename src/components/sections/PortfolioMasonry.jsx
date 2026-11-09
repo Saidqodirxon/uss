@@ -48,7 +48,7 @@ export default function PortfolioMasonry({ limit }) {
           </h2>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {displayedProjects.map((project) => (
               <div
                 key={project.id}
@@ -56,7 +56,7 @@ export default function PortfolioMasonry({ limit }) {
               >
                 <div className="aspect-square overflow-hidden bg-black/20">
                   <img
-                    src={`/images/portfolio/project-${project.id}.jpg`}
+                    src={`/images/portfolio/project-${project.id}.jpg?v=3`}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy"

@@ -15,7 +15,7 @@ export default function PowderCoating() {
   return (
     <>
       {/* HERO */}
-      <section className="py-20 md:py-28 relative overflow-hidden">
+      <section className="pt-28 md:pt-36 pb-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-black -z-10" />
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1 
@@ -56,9 +56,9 @@ export default function PowderCoating() {
             { icon: <Shield className="w-10 h-10 text-emerald-400" />, v: "15 " + t("powder.capabilities.year"), m: t("powder.capabilities.color_retention") },
             { icon: <Factory className="w-10 h-10 text-gray-400" />, v: "6×3×2 m", m: t("powder.capabilities.chamber") },
           ].map((item, i) => (
-            <div key={i} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center">
+            <div key={i} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center flex flex-col items-center">
               {item.icon}
-              <div className="text-3xl font-bold text-white mt-3">{item.v}</div>
+              <div className="text-2xl font-bold text-white mt-3 leading-tight break-words">{item.v}</div>
               <div className="text-white/60 text-sm mt-1">{item.m}</div>
             </div>
           ))}

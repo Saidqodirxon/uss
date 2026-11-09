@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
 
 export default function FloatingButton() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const phone = "+998 95 168 75 55";
-  const whatsapp = "https://wa.me/998991234567";
+  const phone = "+998 90 031 00 31";
+  const whatsapp = "https://wa.me/998900310031";
   const telegram = "https://t.me/USS_EngineeringBot";
 
   return (
@@ -39,9 +40,9 @@ export default function FloatingButton() {
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.2, x: -10 }}
-          className="block w-14 h-14 bg-green-500 rounded-full shadow-xl flex items-center justify-center"
+          className="block w-14 h-14 bg-[#25D366] rounded-full shadow-xl flex items-center justify-center text-white text-2xl"
         >
-          <img src="https://api.iconify.design/mdi:whatsapp.svg?color=white&width=32" alt="WhatsApp" />
+          <FaWhatsapp className="w-7 h-7" />
         </motion.a>
 
         {/* Telegram */}
@@ -50,9 +51,9 @@ export default function FloatingButton() {
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.2, x: -10 }}
-          className="block w-14 h-14 bg-blue-500 rounded-full shadow-xl flex items-center justify-center"
+          className="block w-14 h-14 bg-[#229ED9] rounded-full shadow-xl flex items-center justify-center text-white text-2xl"
         >
-          <img src="https://api.iconify.design/mdi:telegram.svg?color=white&width=32" alt="Telegram" />
+          <FaTelegramPlane className="w-7 h-7" />
         </motion.a>
 
         {/* Telefon */}

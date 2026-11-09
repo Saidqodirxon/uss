@@ -1,6 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react"; 
 import { useTranslation } from "react-i18next";
+import { Cpu, Users, Truck, ShieldCheck } from "lucide-react";
+
+const advantageIcons = [Cpu, Users, Truck, ShieldCheck];
 
 export default function Advantages() {
   const { t } = useTranslation("advantages");
@@ -64,28 +67,27 @@ export default function Advantages() {
 
         {/* KARTALAR */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {data.list.map((adv, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              whileHover={{ y: -10, scale: 1.05 }}
-              className="group"
-            >
-              <div className="h-full p-7 bg-white/6 backdrop-blur-xl border border-white/10 rounded-2xl transition-all duration-500 group-hover:bg-white/12 group-hover:border-white/30 group-hover:shadow-2xl">
-                <div className="mb-5 w-14 h-14">
-                  <img
-                    src={adv.icon}
-                    alt={adv.title}
-                    className="w-full h-full filter brightness-0 invert opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
-                  />
+          {data.list.map((adv, i) => {
+            const IconComponent = advantageIcons[i % advantageIcons.length];
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                whileHover={{ y: -10, scale: 1.05 }}
+                className="group"
+              >
+                <div className="h-full p-7 bg-white/6 backdrop-blur-xl border border-white/10 rounded-2xl transition-all duration-500 group-hover:bg-white/12 group-hover:border-white/30 group-hover:shadow-2xl flex flex-col">
+                  <div className="mb-5 w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-white/15 flex items-center justify-center text-indigo-400 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                    <IconComponent className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{adv.title}</h3>
+                  <p className="text-sm md:text-base text-white/70 leading-relaxed">{adv.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{adv.title}</h3>
-                <p className="text-sm md:text-base text-white/70 leading-relaxed">{adv.desc}</p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { FaTelegramPlane, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -55,16 +56,16 @@ export default function Footer() {
             {/* Ijtimoiy tarmoqlar */}
             <div className="flex gap-4">
               <a href="https://t.me/uss_engineering" target="_blank" rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center transition-all">
-                <img src="https://api.iconify.design/mdi:telegram.svg?color=white&width=28" alt="Telegram" />
+                className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center transition-all text-white hover:text-cyan-400">
+                <FaTelegramPlane className="w-6 h-6" />
               </a>
               <a href="https://instagram.com/uss_engineering" target="_blank" rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center transition-all">
-                <img src="https://api.iconify.design/mdi:instagram.svg?color=white&width=28" alt="Instagram" />
+                className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center transition-all text-white hover:text-pink-400">
+                <FaInstagram className="w-6 h-6" />
               </a>
               <a href="https://youtube.com/@ussengineering" target="_blank" rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center transition-all">
-                <img src="https://api.iconify.design/mdi:youtube.svg?color=white&width=28" alt="YouTube" />
+                className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center transition-all text-white hover:text-red-500">
+                <FaYoutube className="w-6 h-6" />
               </a>
             </div>
           </div>
@@ -110,9 +111,14 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-white/60">{t("footer.phone_label")}</p>
-                  <a href={`tel:${t("footer.phone")}`} className="text-xl font-bold text-white hover:text-indigo-400 transition">
+                  <a href={`tel:${t("footer.phone")?.replace(/\s/g, "")}`} className="text-xl font-bold text-white hover:text-indigo-400 transition block">
                     {t("footer.phone")}
                   </a>
+                  {t("footer.phone_second") && (
+                    <a href={`tel:${t("footer.phone_second")?.replace(/\s/g, "")}`} className="text-xl font-bold text-white hover:text-indigo-400 transition block mt-1">
+                      {t("footer.phone_second")}
+                    </a>
+                  )}
                 </div>
               </div>
 

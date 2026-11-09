@@ -169,10 +169,15 @@ export default function ContactMap() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs text-white/60">{t("contact.phone_label")}</p>
-                  <a href={`tel:${t("contact.info.phone")}`} className="text-lg font-bold hover:text-indigo-300 transition">
+                  <p className="text-xs text-white/60 mb-0.5">{t("contact.phone_label")}</p>
+                  <a href={`tel:${t("contact.info.phone")?.replace(/\s/g, "")}`} className="text-lg font-bold hover:text-indigo-300 transition block">
                     {t("contact.info.phone")}
                   </a>
+                  {t("contact.info.phone_second") && (
+                    <a href={`tel:${t("contact.info.phone_second")?.replace(/\s/g, "")}`} className="text-lg font-bold hover:text-indigo-300 transition block">
+                      {t("contact.info.phone_second")}
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -199,7 +204,7 @@ export default function ContactMap() {
             className="h-[400px] lg:h-auto min-h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-white/10"
           >
             <iframe
-              src="https://yandex.uz/map-widget/v1/?ll=69.230787%2C41.352819&z=17&pt=69.230787,41.352819,pm2blm&ol=biz&oid=159447366426&source=constructor"
+              src="https://yandex.uz/map-widget/v1/?ll=69.228056%2C41.366361&z=17&pt=69.228056,41.366361,pm2rdm"
               width="100%"
               height="100%"
               frameBorder="0"

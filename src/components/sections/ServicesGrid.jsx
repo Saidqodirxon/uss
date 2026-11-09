@@ -3,6 +3,18 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Flame, Wrench, Layers, Sparkles, Paintbrush, Factory, FileCode, Armchair } from "lucide-react";
+
+const serviceAssets = [
+  { image: "/images/portfolio/project-3.jpg", icon: Flame },
+  { image: "/images/hero-1.jpg", icon: Wrench },
+  { image: "/images/portfolio/project-2.jpg", icon: Layers },
+  { image: "/images/portfolio/project-5.jpg", icon: Sparkles },
+  { image: "/images/portfolio/project-6.jpg", icon: Paintbrush },
+  { image: "/images/portfolio/project-1.jpg", icon: Factory },
+  { image: "/images/hero-4.jpg", icon: FileCode },
+  { image: "/images/portfolio/project-4.jpg", icon: Armchair },
+];
 
 export default function ServicesGrid() {
   const { t } = useTranslation("services"); 
@@ -49,40 +61,57 @@ export default function ServicesGrid() {
 
         {/* Grid – mobil uchun 1, tablet uchun 2, desktop uchun 3 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {Array.isArray(services) && services.map((service, index) => (
-            <Link to={service.path} key={index} className="block h-full">
-              <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                animate={isInView ? { y: 0, opacity: 1 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.08 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="group relative h-full"
-              >
-                <div className="relative h-full p-5 sm:p-6 md:p-7 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl transition-all duration-400 group-hover:bg-white/10 group-hover:border-purple-500/40 group-hover:shadow-[0_15px_40px_rgba(79,70,229,0.15)]">
-                  <div className="mb-4 sm:mb-5">
-                    <img 
-                      src={service.icon} 
-                      alt={service.title} 
-                      className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-all duration-300" 
-                    />
+          {Array.isArray(services) && services.map((service, index) => {
+            const asset = serviceAssets[index % serviceAssets.length];
+            const IconComponent = asset.icon;
+
+            return (
+              <Link to={service.path} key={index} className="block h-full">
+                <motion.div
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.08 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="group relative h-full"
+                >
+                  <div className="relative h-full min-h-[320px] p-6 sm:p-7 rounded-2xl sm:rounded-3xl overflow-hidden border border-white/15 transition-all duration-500 group-hover:border-purple-400/50 group-hover:shadow-[0_20px_50px_rgba(79,70,229,0.25)] flex flex-col justify-between">
+                    {/* Orqa fon rasmi */}
+                    <div className="absolute inset-0 -z-10 overflow-hidden">
+                      <img
+                        src={asset.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover scale-105 group-hover:scale-125 transition-transform duration-700 brightness-[0.32] group-hover:brightness-[0.42]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-indigo-950/45" />
+                      <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px] group-hover:backdrop-blur-none transition-all duration-500" />
+                    </div>
+
+                    <div>
+                      {/* Yangilangan Icon */}
+                      <div className="mb-5 inline-flex p-3.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-indigo-600 group-hover:to-purple-700 transition-all duration-300">
+                        <IconComponent className="w-8 h-8 text-white" />
+                      </div>
+
+                      <h3 className="text-xl sm:text-2xl font-black text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-indigo-200 transition-all">
+                        {service.title}
+                      </h3>
+
+                      <p className="text-xs sm:text-sm text-white/75 leading-relaxed font-light line-clamp-3">
+                        {service.desc}
+                      </p>
+                    </div>
+
+                    <div className="mt-6 flex items-center text-indigo-300 group-hover:text-white text-xs sm:text-sm font-semibold uppercase tracking-wider transition-colors">
+                      <span>{t("services.more_details", { ns: "translation" })}</span>
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
                   </div>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm md:text-base text-white/65 leading-relaxed mb-4 sm:mb-6 font-light">
-                    {service.desc}
-                  </p>
-                  
-                  <div className="flex items-center text-indigo-400 text-xs sm:text-sm font-semibold uppercase tracking-wider">
-                    <span>{t("services.more_details", { ns: "translation" })}</span>
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
-                </div>
-              </motion.div>
-            </Link>
-          ))}
+                </motion.div>
+              </Link>
+            );
+          })}
         </div>
 
         {/* CTA button – mobil uchun kichikroq */}

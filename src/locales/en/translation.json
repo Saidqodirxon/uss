@@ -112,13 +112,14 @@
 
     "info": {
       "phone_title": "Phone",
-      "phone": "+998 95 168 75 55",
+      "phone": "+998 90 031 00 31",
+      "phone_second": "+998 99 009 84 43",
 
       "email_title": "E-Mail",
       "email": "info@metall.uz",
 
       "address_title": "Address",
-      "address_short": "Tashkent, Sergeli",
+      "address_short": "Tashkent, Almazar district",
      "address_full": "Tashkent city, Almazar district, Gani Azamov mahalla",
       "address": "Tashkent, Almazar district, Gani Azamov mahalla (Real address)",
 
@@ -151,7 +152,8 @@
     ],
     "contact_title": "Get in Touch",
     "phone_label": "Phone (24/7)",
-    "phone": "+998 99 123-45-67",
+    "phone": "+998 90 031 00 31",
+    "phone_second": "+998 99 009 84 43",
     "address_label": "Address",
     "address": "Tashkent, Almazar district, mahalla gathering of citizens Gani Azamov",
     "hours_label": "Working Hours",

@@ -5,9 +5,9 @@ import { useTranslation } from "react-i18next";
 import OrderModal from "../common/PopupForm";
 
 const flags = {
-  uz: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1ff.svg",
-  ru: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1f7-1f1fa.svg",
-  en: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg",
+  uz: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 250'><rect width='500' height='83.3' fill='%230099b5'/><rect y='83.3' width='500' height='83.4' fill='%23fff'/><rect y='166.7' width='500' height='83.3' fill='%231eb53a'/><rect y='81.3' width='500' height='5' fill='%23ce1126'/><rect y='163.7' width='500' height='5' fill='%23ce1126'/><circle cx='45' cy='42' r='24' fill='%23fff'/><circle cx='53' cy='42' r='20' fill='%230099b5'/></svg>",
+  ru: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 6'><rect fill='%23fff' width='9' height='6'/><rect fill='%230039a6' y='2' width='9' height='4'/><rect fill='%23d52b1e' y='4' width='9' height='2'/></svg>",
+  en: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'><clipPath id='s'><path d='M0 0v30h60V0z'/></clipPath><clipPath id='t'><path d='M30 15h30v15zv15H0zH0V0zV0h30z'/></clipPath><g clip-path='url(%23s)'><path d='M0 0v30h60V0z' fill='%23012169'/><path d='M0 0l60 30m0-30L0 30' stroke='%23fff' stroke-width='6'/><path d='M0 0l60 30m0-30L0 30' clip-path='url(%23t)' stroke='%23C8102E' stroke-width='4'/><path d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/><path d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/></g></svg>",
 };
 
 const languages = [
@@ -26,8 +26,8 @@ export default function Header() {
 
   // Telefon raqamlari massivi
   const phoneNumbers = [
-    { label: "+998 95 168 75 55", value: "+998951687555" },
-    { label: "+998 77 008 08 08", value: "+998770080808" }
+    { label: "+998 90 031 00 31", value: "+998900310031" },
+    { label: "+998 99 009 84 43", value: "+998990098443" }
   ];
 
   const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];

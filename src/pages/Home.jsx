@@ -19,7 +19,7 @@ export default function Home() {
       <ServicesGrid />
       <Advantages />
       <AboutShort />
-      <PortfolioMasonry limit={8} /> 
+      <PortfolioMasonry limit={15} /> 
       <ReviewsSlider />
       <PartnersCarousel />
       <TechTable />

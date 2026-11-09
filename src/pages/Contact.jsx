@@ -39,7 +39,14 @@ export default function Contact() {
             <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-3 md:p-4 text-center">
               <Phone className="w-7 h-7 text-cyan-400 mx-auto mb-2" /> 
               <p className="text-xs text-white/70">{t("contact.phone_label")}</p>
-              <p className="text-base font-bold text-white">{t("contact.info.phone")}</p>
+              <a href={`tel:${t("contact.info.phone")?.replace(/\s/g, "")}`} className="text-sm md:text-base font-bold text-white hover:text-indigo-400 transition block">
+                {t("contact.info.phone")}
+              </a>
+              {t("contact.info.phone_second") && (
+                <a href={`tel:${t("contact.info.phone_second")?.replace(/\s/g, "")}`} className="text-sm md:text-base font-bold text-white hover:text-indigo-400 transition block mt-0.5">
+                  {t("contact.info.phone_second")}
+                </a>
+              )}
             </div>
 
         
@@ -75,7 +82,7 @@ export default function Contact() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => window.location.href = "tel:+998951687555"}
+            onClick={() => window.location.href = "tel:+998900310031"}
             className="px-10 py-4 bg-white text-black rounded-full text-xl font-black shadow-lg hover:shadow-white/50 transition-all" 
           >
             {t("contact.cta_button")}

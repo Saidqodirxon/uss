@@ -51,14 +51,95 @@ const projects = [
     desc: "Yengil po‘lat konstruktsiyalar bilan qurilgan katta angar...",
     images: ["2", "1", "4"],
   },
-   {
+  {
     id: 6,
-    title: "Dekorativ panelar",
-    location: "Farg‘ona",
-    area: "3500 m²",
+    title: "Dekorativ panellar",
+    location: "Toshkent",
+    area: "800 m²",
+    year: "2024",
+    desc: "Restoran va kafe dizayni uchun naqshli lazer kesim panellari.",
+    images: ["6", "3", "1"],
+  },
+  {
+    id: 7,
+    title: "Sanoat eshiklari",
+    location: "Toshkent",
+    area: "450 m²",
+    year: "2024",
+    desc: "Avtomatik ochilish tizimiga ega mustahkam sanoat eshiklari.",
+    images: ["7", "2", "4"],
+  },
+  {
+    id: 8,
+    title: "Reklama konstruktsiyasi",
+    location: "Toshkent City",
+    area: "18 m balandlik",
+    year: "2024",
+    desc: "Shahar markazidagi yirik LED ekran va reklama metall karkasi.",
+    images: ["8", "1", "5"],
+  },
+  {
+    id: 9,
+    title: "Logistika markazi ombori",
+    location: "Toshkent viloyati",
+    area: "2800 m²",
+    year: "2024",
+    desc: "A toifadagi logistika markazi uchun metall karkas va angar.",
+    images: ["9", "2", "6"],
+  },
+  {
+    id: 10,
+    title: "Lazer naqshli metall darvozalar",
+    location: "Toshkent",
+    area: "120 m²",
     year: "2025",
-    desc: "Yengil po‘lat konstruktsiyalar bilan qurilgan katta angar...",
-    images: ["2", "1", "4"],
+    desc: "Shaxsiy rezidensiya uchun eksklyuziv lazer naqshli darvoza va to'siqlar.",
+    images: ["10", "3", "7"],
+  },
+  {
+    id: 11,
+    title: "Sanoat ventilyatsiya kanallari",
+    location: "Navoiy",
+    area: "1500 m",
+    year: "2024",
+    desc: "Zavod va ishlab chiqarish majmuasi uchun galvanizatsiyalangan ventilyatsiya tizimi.",
+    images: ["11", "4", "8"],
+  },
+  {
+    id: 12,
+    title: "Metall zinapoyalar va to‘siqlar",
+    location: "Toshkent",
+    area: "600 m²",
+    year: "2025",
+    desc: "Zamonaviy ofis va savdo markazi uchun spiral va to'g'ri zinapoyalar.",
+    images: ["12", "1", "5"],
+  },
+  {
+    id: 13,
+    title: "Fermer xo‘jaligi texnika angari",
+    location: "Samarqand",
+    area: "2000 m²",
+    year: "2024",
+    desc: "Og'ir qishloq xo'jaligi texnikasini saqlash uchun keng oraliqli metall angar.",
+    images: ["13", "2", "6"],
+  },
+  {
+    id: 14,
+    title: "Avtosalon fassad metall konstruktsiyasi",
+    location: "Toshkent",
+    area: "900 m²",
+    year: "2024",
+    desc: "Premium avtosalon uchun zamonaviy metall va shisha fasad tizimi.",
+    images: ["14", "3", "7"],
+  },
+  {
+    id: 15,
+    title: "Quvur va profillarni bukish loyihasi",
+    location: "Andijon",
+    area: "3000+ dona",
+    year: "2025",
+    desc: "Sanoat mashinasozligi uchun turli diametrdagi quvurlarni aniq burchakda bukish.",
+    images: ["15", "4", "8"],
   },
 
 ];
@@ -119,8 +200,8 @@ export default function PortfolioDetail() {
                   className="aspect-video rounded-2xl overflow-hidden shadow-2xl"
                 >
                   <img
-                    src={`/images/portfolio/project-${project.id}-${i}.jpg`}
-                    alt=""
+                    src={`/images/portfolio/project-${((project.id + i - 2) % 15) + 1}.jpg?v=3`}
+                    alt={project.title}
                     className="w-full h-full object-cover hover:scale-105 transition"
                   />
                 </div>

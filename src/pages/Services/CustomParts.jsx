@@ -15,7 +15,7 @@ export default function CustomParts() {
   return (
     <>
       {/* HERO */}
-      <section className="py-20 md:py-28 relative overflow-hidden">
+      <section className="pt-28 md:pt-36 pb-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-black -z-10" />
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1 
@@ -57,9 +57,9 @@ export default function CustomParts() {
             { icon: <Ruler className="w-10 h-10 text-cyan-400" />, v: "±0.1 mm", m: t("custom.stats.tolerance") },
             { icon: <Clock4 className="w-10 h-10 text-pink-400" />, v: "7-30 " + t("custom.stats.days"), m: t("custom.stats.production") },
           ].map((item, i) => (
-            <div key={i} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center">
+            <div key={i} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center flex flex-col items-center">
               {item.icon}
-              <div className="text-3xl font-bold text-white mt-3">{item.v}</div>
+              <div className="text-2xl font-bold text-white mt-3 leading-tight break-words">{item.v}</div>
               <div className="text-white/60 text-sm mt-1">{item.m}</div>
             </div>
           ))}
